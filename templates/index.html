@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container">
+        <h2 class="fs-2 mt-5">Weather Dashboard</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>City Name</th>
+                    <th>Temperature (°C)</th>
+                    <th>Humidity (%)</th>
+                    <th>Weather Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for weather_data in result %}
+                <tr>
+                    <td>{{ weather_data.name }}</td>
+                    <td>{{ weather_data.main.temp }}</td>
+                    <td>{{ weather_data.main.humidity }}</td>
+                    <td>{{ weather_data.weather[0].description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center">
+            <h4>Your Saved Cities:</h4>
+            <ul class="list-group">
+                {% for city_name in user_cities %}
+                <li class="list-group-item">{{ city_name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container">
+        <h2 class="fs-2 mt-5">User Profile</h2>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <h3>Saved Cities</h3>
+        <ul>
+            {% for city in user.cities %}
+            <li>{{ city }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

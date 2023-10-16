@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container">
+        <h2 class="fs-2 mt-5">Remove a City</h2>
+        <form method="POST" action="/remove">
+            <div class="form-group">
+                <label for="city">City Name</label>
+                <input type="text" class="form-control" id="city" name="city" placeholder="Enter city name" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Remove City</button>
+        </form>
+    </div>
+{% endblock %}
